@@ -1,7 +1,5 @@
-# Две независимые Bluetooth-клавиатуры, НЕ split central/peripheral.
-# Если ваша SuperMini nRF52840 не совместима с nice_nano_v2, замените board здесь.
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: dactyl_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: dactyl_right
