@@ -1,0 +1,15 @@
+# ZMK / west / build artifacts
+build/
+zephyr/
+modules/
+tools/
+.zmk/
+.west/
+*.uf2
+*.hex
+*.elf
+*.bin
+*.map
+*.zip
+.DS_Store
+Thumbs.db

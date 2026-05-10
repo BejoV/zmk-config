@@ -1,0 +1,9 @@
+file_format: "1"
+id: dactyl_left
+name: Dactyl Left Independent
+type: shield
+url: https://www.thingiverse.com/thing:6556207
+requires:
+  - nice_nano_v2
+features:
+  - keys

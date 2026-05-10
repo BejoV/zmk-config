@@ -1,6 +1,0 @@
-if SHIELD_DACTYL46_RIGHT
-
-config ZMK_KEYBOARD_NAME
-    default "Dactyl46 R"
-
-endif

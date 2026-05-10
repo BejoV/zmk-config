@@ -1,0 +1,6 @@
+if SHIELD_DACTYL_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Dactyl Left"
+
+endif

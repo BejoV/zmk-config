@@ -1,5 +1,0 @@
-include:
-  - board: nice_nano_v2
-    shield: dactyl46_left
-  - board: nice_nano_v2
-    shield: dactyl46_right
