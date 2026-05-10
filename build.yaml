@@ -3,3 +3,5 @@ include:
     shield: dactyl_left
   - board: nice_nano/nrf52840/zmk
     shield: dactyl_right
+  - board: nice_nano/nrf52840/zmk
+    shield: settings_reset
