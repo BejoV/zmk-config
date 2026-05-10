@@ -1,69 +1,13 @@
 name: Build ZMK firmware
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "config/**"
       - "build.yaml"
       - ".github/workflows/build.yml"
-  pull_request:
-    paths:
-      - "config/**"
-      - "build.yaml"
-      - ".github/workflows/build.yml"
-  workflow_dispatch:
 
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    outputs:
-      build_matrix: ${{ steps.generate-matrix.outputs.build_matrix }}
-      has_valid_build_matrix: ${{ steps.generate-matrix.outputs.has_valid_build_matrix }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install yq
-        run: |
-          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          sudo chmod +x /usr/local/bin/yq
-
-      - name: Generate build matrix
-        id: generate-matrix
-        run: |
-          matrix_content=$(yq -oj -I0 '.' build.yaml)
-
-          if [ -z "$matrix_content" ] || [ "$matrix_content" = "null" ]; then
-            echo "::notice file=build.yaml,title=Empty build matrix file::To add a keyboard to the build, see https://zmk.dev/docs/user-setup#add-a-keyboard."
-            echo "has_valid_build_matrix=false" >> $GITHUB_OUTPUT
-          else
-            echo "build_matrix=$matrix_content" >> $GITHUB_OUTPUT
-            echo "has_valid_build_matrix=true" >> $GITHUB_OUTPUT
-            echo "$matrix_content"
-          fi
-
   build:
-    needs: prepare
-    if: needs.prepare.outputs.has_valid_build_matrix == 'true'
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJson(needs.prepare.outputs.build_matrix) }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build ZMK firmware
-        uses: zmkfirmware/zmk/.github/actions/build-user-config@main
-        with:
-          board: ${{ matrix.board }}
-          shield: ${{ matrix.shield }}
-
-      - name: Archive firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: firmware-${{ matrix.shield }}-${{ matrix.board }}
-          path: build/*.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
