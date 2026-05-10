@@ -1,0 +1,6 @@
+if SHIELD_DACTYL46_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Dactyl46 L"
+
+endif
