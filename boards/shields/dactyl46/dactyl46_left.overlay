@@ -1,5 +1,1 @@
 #include "dactyl46.dtsi"
-
-&uicr {
-    nfct-pins-as-gpios;
-};
