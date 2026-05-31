@@ -16,7 +16,7 @@
         debounce-release-ms = <10>;
 
         row-gpios = <
-            &gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
             &gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
             &gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
             &gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
@@ -28,14 +28,14 @@
             &gpio1 15 GPIO_ACTIVE_HIGH
             &gpio1 13 GPIO_ACTIVE_HIGH
             &gpio1 11 GPIO_ACTIVE_HIGH
-            &gpio0 31 GPIO_ACTIVE_HIGH
+            &gpio0 10 GPIO_ACTIVE_HIGH
         >;
     };
 
     /*
-     * Для ЛЕВОЙ половины:
+     * Левая половина:
      * физически слева направо у тебя C5 C4 C3 C2 C1 C0,
-     * поэтому разворачиваем transform.
+     * поэтому transform разворачиваем.
      */
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
