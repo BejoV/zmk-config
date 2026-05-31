@@ -1,9 +1,9 @@
 include:
-  - board: nice_nano/nrf52840/zmk
+  - board: nice_nano@2//zmk
     shield: dactyl46_left
 
-  - board: nice_nano/nrf52840/zmk
+  - board: nice_nano@2//zmk
     shield: dactyl46_right
 
-  - board: nice_nano/nrf52840/zmk
+  - board: nice_nano@2//zmk
     shield: settings_reset

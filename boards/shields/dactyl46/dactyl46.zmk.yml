@@ -4,7 +4,7 @@ name: Dactyl 4x6
 type: shield
 url: https://www.thingiverse.com/thing:6556207
 requires:
-  - nice_nano_v2
+  - nice_nano
 features:
   - keys
 siblings:
