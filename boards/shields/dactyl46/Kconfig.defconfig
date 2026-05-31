@@ -6,9 +6,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
 endif
 
 if SHIELD_DACTYL46_RIGHT
@@ -17,9 +14,6 @@ config ZMK_KEYBOARD_NAME
     default "Dactyl46"
 
 config ZMK_SPLIT
-    default y
-
-config ZMK_SPLIT_ROLE_PERIPHERAL
     default y
 
 endif
