@@ -1,0 +1,5 @@
+#include "dactyl46.dtsi"
+
+&kscan0 {
+    col-offset = <6>;
+};

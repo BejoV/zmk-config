@@ -1,9 +1,12 @@
 file_format: "1"
-id: dactyl_left
-name: Dactyl Left Independent
+id: dactyl46
+name: Dactyl 4x6
 type: shield
 url: https://www.thingiverse.com/thing:6556207
 requires:
   - nice_nano_v2
 features:
   - keys
+siblings:
+  - dactyl46_left
+  - dactyl46_right
