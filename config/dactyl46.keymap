@@ -15,6 +15,160 @@
                 , <&macro_tap &kp LSHFT>
                 , <&macro_release &kp LALT>;
         };
+
+        ctrl_tilde: ctrl_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        alt_tilde: alt_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LALT>;
+        };
+
+        undo_m: undo_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        cut_m: cut_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        copy_m: copy_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        paste_m: paste_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>;
+        };
+    };
+
+    behaviors {
+        bspc_del: bspc_del {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <190>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp DEL>, <&kp BSPC>;
+        };
+
+        del_bspc: del_bspc {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <190>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+        };
+
+        ent_lsft: ent_lsft {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <140>;
+            require-prior-idle-ms = <130>;
+            bindings = <&kp LSHIFT>, <&kp ENTER>;
+        };
+
+        spc_lctl: spc_lctl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <140>;
+            require-prior-idle-ms = <130>;
+            bindings = <&kp LCTRL>, <&kp SPACE>;
+        };
+
+        ent_rsft: ent_rsft {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <140>;
+            require-prior-idle-ms = <130>;
+            bindings = <&kp RSHIFT>, <&kp ENTER>;
+        };
+
+        spc_rctl: spc_rctl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <140>;
+            require-prior-idle-ms = <130>;
+            bindings = <&kp RCTRL>, <&kp SPACE>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_caps {
+            timeout-ms = <55>;
+            key-positions = <25 26>;
+            bindings = <&kp CAPS>;
+        };
     };
 
     keymap {
@@ -26,7 +180,7 @@
 /* Row 0 */  &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &kp LBKT         &kp RBKT
 /* Row 1 */  &kp BSLH         &kp A            &kp S            &kp D            &kp F            &kp G            &kp H            &kp J            &kp K            &kp L            &kp SEMI         &kp SQT
 /* Row 2 */  &kp Z            &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &kp COMMA        &kp DOT          &kp SLASH        &kp MINUS        &kp EQUAL
-/* Row 3 */                   &kp BSPC         &lang_switch     &mt LSHIFT ENTER &mt LCTRL SPACE  &mo 1            &mo 1            &mt RCTRL SPACE  &mt RSHIFT ENTER &tog 2           &kp DEL
+/* Row 3 */                   &bspc_del        &lang_switch     &ent_lsft        &spc_lctl        &to 1            &to 2            &spc_rctl        &ent_rsft        &to 4            &del_bspc
             >;
         };
 
@@ -36,7 +190,27 @@
 /* Row 0 */  &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp CARET        &kp AMPS         &kp STAR         &kp LPAR         &kp RPAR         &kp LBRC         &kp RBRC
 /* Row 1 */  &kp N1           &kp N2           &kp N3           &kp N4           &kp N5           &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &kp UNDER        &kp PLUS
 /* Row 2 */  &kp GRAVE        &kp TILDE        &kp PIPE         &kp BSLH         &kp LT           &kp GT           &kp COLON        &kp SEMI         &kp COMMA        &kp DOT          &kp QUESTION     &kp EQUAL
-/* Row 3 */                   &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans
+/* Row 3 */                   &to 0            &sk LSHIFT       &sk LCTRL        &to 3            &to 0            &to 2            &kp SPACE        &kp ENTER        &to 4            &to 0
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+/* Row 0 */  &undo_m          &cut_m           &copy_m          &paste_m         &ctrl_tilde      &alt_tilde       &kp HOME         &kp UP           &kp END          &kp PG_UP        &kp INS          &kp DEL
+/* Row 1 */  &sk LSHIFT       &sk LCTRL        &kp LALT         &kp LGUI         &lang_switch     &to 3            &kp LEFT         &kp DOWN         &kp RIGHT        &kp PG_DN        &kp TAB          &kp ESC
+/* Row 2 */  &none            &none            &none            &none            &none            &none            &kp C_MUTE       &kp C_VOL_DN     &kp C_VOL_UP     &none            &none            &none
+/* Row 3 */                   &to 0            &to 1            &kp ENTER        &kp SPACE        &to 0            &to 0            &kp SPACE        &kp ENTER        &to 4            &to 0
+            >;
+        };
+
+        num_layer {
+            display-name = "NUM";
+            bindings = <
+/* Row 0 */  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6           &kp N7           &kp N8           &kp N9           &kp STAR         &kp SLASH        &kp MINUS
+/* Row 1 */  &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12          &kp N4           &kp N5           &kp N6           &kp PLUS         &kp LPAR         &kp RPAR
+/* Row 2 */  &kp LBKT         &kp RBKT         &kp LBRC         &kp RBRC         &kp PIPE         &kp EQUAL        &kp N1           &kp N2           &kp N3           &kp N0           &kp DOT          &kp COMMA
+/* Row 3 */                   &to 0            &to 1            &kp ENTER        &kp SPACE        &to 0            &to 2            &kp SPACE        &kp ENTER        &to 4            &to 0
             >;
         };
 
@@ -46,7 +220,7 @@
 /* Row 0 */  &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &out OUT_USB     &out OUT_BLE     &kp C_MUTE       &kp C_VOL_DN     &kp C_VOL_UP     &bootloader
 /* Row 1 */  &kp ESC          &kp TAB          &kp HOME         &kp END          &kp PG_UP        &kp PG_DN        &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp INS          &kp DEL
 /* Row 2 */  &kp LCTRL        &kp LALT         &kp LGUI         &kp LSHIFT       &none            &none            &kp RSHIFT       &kp RGUI         &kp RALT         &kp RCTRL        &none            &sys_reset
-/* Row 3 */                   &to 0            &to 0            &kp ENTER        &kp SPACE        &to 0            &to 0            &kp SPACE        &kp ENTER        &to 0            &to 0
+/* Row 3 */                   &to 0            &to 1            &kp ENTER        &kp SPACE        &to 0            &to 2            &kp SPACE        &kp ENTER        &to 3            &to 0
             >;
         };
     };
