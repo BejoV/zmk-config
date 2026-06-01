@@ -95,7 +95,7 @@
             tapping-term-ms = <190>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp DEL>, <&kp BSPC>;
+            bindings = <&kp DEL &kp BSPC>;
         };
 
         del_bspc: del_bspc {
@@ -105,7 +105,7 @@
             tapping-term-ms = <190>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp BSPC>, <&kp DEL>;
+            bindings = <&kp BSPC &kp DEL>;
         };
 
         ent_lsft: ent_lsft {
@@ -115,7 +115,7 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <140>;
             require-prior-idle-ms = <130>;
-            bindings = <&kp LSHIFT>, <&kp ENTER>;
+            bindings = <&kp LSHIFT &kp ENTER>;
         };
 
         spc_lctl: spc_lctl {
@@ -125,7 +125,7 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <140>;
             require-prior-idle-ms = <130>;
-            bindings = <&kp LCTRL>, <&kp SPACE>;
+            bindings = <&kp LCTRL &kp SPACE>;
         };
 
         ent_rsft: ent_rsft {
@@ -135,7 +135,7 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <140>;
             require-prior-idle-ms = <130>;
-            bindings = <&kp RSHIFT>, <&kp ENTER>;
+            bindings = <&kp RSHIFT &kp ENTER>;
         };
 
         spc_rctl: spc_rctl {
@@ -145,7 +145,7 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <140>;
             require-prior-idle-ms = <130>;
-            bindings = <&kp RCTRL>, <&kp SPACE>;
+            bindings = <&kp RCTRL &kp SPACE>;
         };
     };
 
