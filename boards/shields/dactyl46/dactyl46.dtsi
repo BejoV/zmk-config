@@ -12,8 +12,8 @@
         diode-direction = "col2row";
         wakeup-source;
 
-	debounce-press-ms = <1>;
-	debounce-release-ms = <5>;
+        debounce-press-ms = <1>;
+        debounce-release-ms = <5>;
 
         row-gpios = <
             &gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
@@ -32,20 +32,6 @@
         >;
     };
 
-    /*
-     * Полная логическая раскладка = 46 позиций:
-     * 23 слева + 23 справа.
-     *
-     * Левая половина:
-     * верхние 3 ряда: C5 C4 C3 C2 C1 C0
-     * нижний ряд:     C4 C3 C2 C1 C0
-     *
-     * Правая половина:
-     * верхние 3 ряда: C0 C1 C2 C3 C4 C5
-     * нижний ряд:     C0 C1 C2 C3 C4
-     *
-     * Для правой половины ниже в right.overlay будет задан col-offset = <6>.
-     */
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <4>;
@@ -64,7 +50,7 @@
             RC(2,5)  RC(2,4)  RC(2,3)  RC(2,2)  RC(2,1)  RC(2,0)
             RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
 
-            /* Row 3: 5 + 5 */
+            /* Row 3: 5 слева + 5 справа */
                      RC(3,4)  RC(3,3)  RC(3,2)  RC(3,1)  RC(3,0)
             RC(3,6)  RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10)
         >;

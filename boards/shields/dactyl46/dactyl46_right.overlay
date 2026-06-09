@@ -1,5 +1,7 @@
 #include "dactyl46.dtsi"
-
 &uicr {
     nfct-pins-as-gpios;
+};
+&default_transform {
+    col-offset = <6>;
 };
