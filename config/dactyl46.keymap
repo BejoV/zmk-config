@@ -136,9 +136,9 @@
             display-name = "BASE";
             bindings = <
 /* Row 0 */  &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                 &kp Y                 &kp U                 &kp I                 &kp O                 &kp P                 &kp LBKT              &kp RBKT
-/* Row 1 */  &kp BSLH              &kp A                 &kp S                 &kp D                 &kp F                 &kp G                 &kp H                 &kp J                 &kp K                 &kp L                 &kp SEMI              &kp SQT
+/* Row 1 */  &kp GRAVE              &kp A                 &kp S                 &kp D                 &kp F                 &kp G                 &kp H                 &kp J                 &kp K                 &kp L                 &kp SEMI              &kp SQT
 /* Row 2 */  &kp Z                 &kp X                 &kp C                 &kp V                 &kp B                 &kp N                 &kp M                 &kp COMMA             &kp DOT               &kp SLASH             &kp MINUS             &kp EQUAL
-/* Row 3 */                        &bspc_del DEL BSPC    &lang_switch          &sk LSHIFT            &sk LCTRL             &to 1                 &to 2                 &kp SPACE             &kp ENTER             &to 4                 &del_bspc BSPC DEL
+/* Row 3 */                        &lang_switch          &sk LCTRL             &sk LSHIFT            &kp SPACE             &to 1                 &to 2                 &kp SPACE             &kp ENTER             &to 4                 &del_bspc BSPC DEL
             >;
         };
 
